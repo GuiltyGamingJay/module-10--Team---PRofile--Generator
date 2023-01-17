@@ -1,0 +1,24 @@
+{
+  "name": "module-10--team---profile--generator",
+  "version": "1.0.0",
+  "description": "Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator/issues"
+  },
+  "homepage": "https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator#readme"
+}
