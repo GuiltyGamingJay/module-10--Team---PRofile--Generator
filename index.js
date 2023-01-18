@@ -218,7 +218,8 @@ function addMoreEmployee() {
   function getHtml() {
     const employeeHtml = getEmployeeHtml();
   
-    //for the card, create empty array, push the html syntax into the empty array, put the whole array in
+    //html template created when npm i inquirer@8.2.4 and npm i --save-dev jest ran successfully   run node index.js and start 
+
     const html = `<!DOCTYPE html>
       <html lang="en">
         <head>
