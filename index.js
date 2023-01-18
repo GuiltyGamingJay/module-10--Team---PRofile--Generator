@@ -169,4 +169,85 @@ function addMoreEmployee() {
       })
       .catch((err) => console.log(err));
   }
+  function getEmployeeHtml() {
+    const employee = [];
   
+    //loop through the list
+    for (let i = 0; i < employeeList.length; i++) {
+      if (employeeList[i].getRole() === "Manager") {
+        console.log("Manager");
+        let htmlManager = `<div class="employee card g-col-3 g-col-md-3 shadow p-3 mb-5 bg-body rounded"  style="width: 25rem;">
+          <h2 class="card-header">${employeeList[i].getName()}<br>
+          <i class="fa-solid fa-user-tie"></i>${employeeList[i].getRole()}</h2>
+          <ul class="info list-group list-group-flush">
+            <li class="list-group-item">ID: ${employeeList[i].getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${employeeList[i].getEmail()}">${employeeList[i].getEmail()}</a></li>
+            <li class="list-group-item">Office number:  ${employeeList[i].getOfficeNumber()}</li>
+          </ul>
+        </div>`;
+        employee.push(htmlManager);
+      } else if (employeeList[i].getRole() === "Engineer") {
+        console.log("Engineer");
+        let htmlEngineer = `<div class="employee card g-col-3 g-col-md-3 shadow p-3 mb-5 bg-body rounded"  style="width: 25rem;">
+        <h2 class="card-header">${employeeList[i].getName()}<br>
+        <i class="fa-solid fa-gear"></i>${employeeList[i].getRole()}</h2>
+        <ul class="info list-group list-group-flush">
+          <li class="list-group-item">ID: ${employeeList[i].getId()}</li>
+          <li class="list-group-item">Email: <a href="mailto:${employeeList[i].getEmail()}">${employeeList[i].getEmail()}</a></li>
+          <li class="list-group-item">Github: <a href="https://github.com/${employeeList[i].getGithub()}">https://github.com/${employeeList[i].getGithub()}</a></li>
+        </ul>
+      </div>`;
+        employee.push(htmlEngineer);
+      } else {
+        console.log("Intern");
+        let htmlIntern = `<div class="employee card g-col-3 g-col-md-3 shadow p-3 mb-5 bg-body rounded"  style="width: 25rem;">
+        <h2 class="card-header">${employeeList[i].getName()}<br>
+        <i class="fa-solid fa-child-reaching"></i>${employeeList[i].getRole()}</h2>
+        <ul class="info list-group list-group-flush">
+          <li class="list-group-item">ID: ${employeeList[i].getId()}</li>
+          <li class="list-group-item">Email: <a href="mailto:${employeeList[i].getEmail()}">${employeeList[i].getEmail()}</a></li>
+          <li class="list-group-item">School: ${employeeList[i].getSchool()}</li>
+        </ul>
+      </div>`;
+        employee.push(htmlIntern);
+      }
+    }
+    console.log(employee);
+    return employee;
+  }
+  function getHtml() {
+    const employeeHtml = getEmployeeHtml();
+  
+    //for the card, create empty array, push the html syntax into the empty array, put the whole array in
+    const html = `<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Team Profile Generator</title>
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+          />
+          <link rel="stylesheet" href="./style.css" />
+        </head>
+        <body>
+          <header>
+          <h1 class="display-1">Meet My Team</h1>
+          </header>
+          <main>
+            <div class="team-members d-flex justify-content-sm-evenly align-items-stretch flex-wrap grid">${employeeHtml}</div>
+          </main>
+          <footer>&copy Jerontai Mcfee 2023</footer>
+        </body>
+        <script src="https://kit.fontawesome.com/30f6588d91.js" crossorigin="anonymous"></script>
+        <script src="../index.js"></script>
+      </html>`;
+  
+    return html;
+  }
+  
+  init();

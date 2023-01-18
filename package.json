@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator/issues"
   },
-  "homepage": "https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator#readme"
+  "homepage": "https://github.com/GuiltyGamingJay/module-10--Team---PRofile--Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
 }
